@@ -51,7 +51,10 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
-
+    @classmethod
+    def search_by_category(cls, category):
+        images = cls.objects.filter(category__name__icontains=category)
+        return images
 class Location(models.Model):
     name = models.CharField(max_length=60)
 
