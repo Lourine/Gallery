@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +76,11 @@ TEMPLATES = [
         },
     },
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'lourinemilly',
+    'API_KEY': '455221355752629',
+    'API_SECRET': '-sry_MkViaBQMeMkrSQ6FzYk63E'
+}
 
 WSGI_APPLICATION = 'gallery.wsgi.application'
 
@@ -154,6 +161,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
