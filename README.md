@@ -6,7 +6,7 @@
 # Description  
 This is a Django application for personal gallery that allows a user to upload images for other to see and be able to to share by coping the image link.
   
-  
+
 ## User Story  
   
 * View different photos that interest them  
@@ -74,5 +74,5 @@ If you have any question or contributions, please email me at [lourine.millicent
   
 ## License 
 
-* [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)]
+* [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)](https://github.com/Lourine/Gallery/blob/master/LICENSE)  
 * Copyright (c) 2020 **Lourine Millicent**
