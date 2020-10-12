@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Image(models.Model):
     image = models.ImageField(upload_to='images/')
+    image_url = models.TextField(blank = True)
     name = models.CharField(max_length=60)
     description = models.TextField()
     category = models.ForeignKey('Category', on_delete = models.CASCADE,)
@@ -12,6 +13,12 @@ class Image(models.Model):
     def filter_by_location(cls, location):
         image_location = Image.objects.filter(location__name=location).all()
         return image_location
+    
+    @classmethod
+    def filter_by_category(cls, category):
+        image_category = Image.objects.filter(category__name=category).all()
+        return image_category
+
 
     @classmethod
     def update_image(cls, id, value):
@@ -55,6 +62,11 @@ class Category(models.Model):
     def search_by_category(cls, category):
         images = cls.objects.filter(category__name__icontains=category)
         return images
+    @classmethod
+    def get_categorys(cls):
+        categorys = Category.objects.all()
+        return categorys
+        
 class Location(models.Model):
     name = models.CharField(max_length=60)
 
